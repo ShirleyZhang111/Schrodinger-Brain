@@ -1,4 +1,4 @@
-% linear model parameter: Q0 (voxel-level, unitary matrix)
+% linear model parameter: Q0 (voxel-level, unitary matrix)  
 data_path = 'your_save_path_of_linear_group_model'; % save_path from calc_coefficients_linear_group.m
 load([date_path 'Group_rfMRI_resting_Q_G_lambda_complex.mat']);
 
@@ -29,4 +29,5 @@ for k = 1:node_items
     c = c(2000:end);
     [~,index] = find(0.6 <= c & c <= 0.62);
     Intrinsic_timescale(k,1) = index(1)/100;
+
 end
