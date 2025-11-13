@@ -43,8 +43,9 @@ B = data(:,2:end);
 V1 = V_r(1:T0-1,:);
 V2 = V_r(T0:2*T0-2,:);
 [U0,~,V0] = svd(S_r*V2'*V1*S_r');
-Q = eye(m)-U_r*(eye(2*(T0-2))-U0*V0')*U_r';
+Q = eye(m)-U_r*(eye(2*T0-2)-U0*V0')*U_r';
 [G,D] = eig(Q);
 lambda = diag(D);
 
 save([save_path file_name(4:end-4) '_linear_fitting_' field '.mat'], 'Q','G','lambda');
+
