@@ -5,12 +5,14 @@ data_path = 'your_data_path'; % data path in calc_coefficients_linear.m
 field = 'complex'; % or real
 load([parameters_path file_name(4:end-4) '_linear_fitting_' field '.mat']);
 
-% prediction length: 25TRs, initial state: the 401st TR
+% prediction length: 25TRs 
 inCfg = struct('data_path', data_path, 'file_name', file_name, 'Q', Q,...
-    'field',field, 'T', 100:end-100 ,'Initial_time', 401,'signal_length',25);
+    'field',field, 'T', 100:1000 ,'Initial_time', 300,'signal_length',25);
 
 [data_predicted,data_obeserved,corr] = calc_prediction(inCfg);
 
 % Analysis of 25TRs prediction
 figure; 
-boxplot(corr);
+plot(data_obeserved(1,:)); hold on;
+plot(data_predicted(1,:)); hold on;
+legend('observed','predicted');
