@@ -42,7 +42,7 @@ if ~hasCalc
     cfg.maxit = 500;
     cfg.tol = 1e-4;
     cfg.mu = mu;
-    cfg.feild = 'complex';
+    cfg.field = 'complex';
 
     for i_sub = sub_index%n_subs:-1:1 % sub_index
         disp(['i_sub = ' num2str(i_sub)]);
@@ -53,3 +53,4 @@ if ~hasCalc
     cfg.save_path = [cfg.save_path 'test_mu/'];if ~exist(cfg.save_path,'dir');mkdir(cfg.save_path);end
     save([cfg.save_path 'mse_real_' num2str(sub_index) '.mat'],'mse_real');
 end
+
