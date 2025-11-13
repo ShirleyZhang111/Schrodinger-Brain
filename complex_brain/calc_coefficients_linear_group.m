@@ -16,11 +16,14 @@ data_path = inCfg.data_path;
 save_path = inCfg.save_path;
 if isfield(inCfg,'T');T = inCfg.T;else;T = [];end % Time points for fitting
 if isfield(inCfg,'field');field = inCfg.field;else;field = 'complex';end 
-if isfield(inCfg,'item');item = inCfg.item;else;item = 1;end % number of subjects
+if isfield(inCfg,'item_number'); item_number = inCfg.item_number;else;item_number = 1;end % number of subjects
 if isfield(inCfg,'idx');idx = inCfg.idx;else;idx = 1;end % space, number of node (region/voxel)
 
+items = dir(data_path);
+items = items(3:end);
+
 W = zeros(idx,idx);
-for k = 1:item
+for k = 1:item_number
     item = items(k).name;
     data = load(strcat(data_path, '/', item));
     TC = data.TC;
@@ -43,4 +46,5 @@ end
 Q = U*V';
 [G,D] = eig(Q);
 lambda = diag(D);
+
 save([save_path 'Group_rfMRI_resting_Q_G_lambda_' field '.mat'], 'Q','G','lambda');
