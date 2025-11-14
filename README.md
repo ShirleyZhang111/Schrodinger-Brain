@@ -93,7 +93,7 @@ Traffic-related time series used as a non-neural benchmark are downloaded from t
 ## Quick Demo 
 The following minimal examples demonstrate how to run a basic analysis after preparing your data. Here, we provide data for an individual subject from the HCP, HCPex, and UKB datasets, respectively, and execute the models (Hamilton model, linear/nonlinear Schrodinger model). Note that the actual script names may vary depending on the final repository structure; please adjust paths and filenames accordingly.
 
-### Python: Hamilotin Model
+### Python: Hamilton Model
 
 ```python
 # Example: Run demo_Hamilton.py
