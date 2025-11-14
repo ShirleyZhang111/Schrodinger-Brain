@@ -91,7 +91,7 @@ Neuroimaging data from UK Biobank are available by application via the UK Bioban
 Traffic-related time series used as a non-neural benchmark are downloaded from the **UCI Machine Learning Repository**.
 
 ## Quick Demo 
-The following minimal examples demonstrate how to run a basic analysis after preparing your data. Here, we provide data for an individual subject from the HCP, HCPex, and UKB datasets, respectively, and execute the model. Note that the actual script names may vary depending on the final repository structure; please adjust paths and filenames accordingly.
+The following minimal examples demonstrate how to run a basic analysis after preparing your data. Here, we provide data for an individual subject from the HCP, HCPex, and UKB datasets, respectively, and execute the models (Hamilton model, linear/nonlinear Schrodinger model). Note that the actual script names may vary depending on the final repository structure; please adjust paths and filenames accordingly.
 
 ### Python: Hamilotin Model
 
