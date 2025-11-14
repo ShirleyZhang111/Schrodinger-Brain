@@ -1,5 +1,5 @@
 # Schrödinger-Brain
-We present a framework for augmenting brain dynamics into a complex-valued field using Hamilton's equations. We then employ a data-driven strategy to model brain dynamics using Schrödinger-like equation. The entire data-driven modeling (iincluding linear and nonlinear) and analysis of complex-valued brain network dynamics is grounded in multi-modal data, including resting-state and task fMRI, diffusion MRI, and auxiliary benchmarks.
+We present a framework for augmenting brain dynamics into a complex-valued field using Hamilton's equations. We then employ a data-driven strategy to model brain dynamics using Schrödinger-like equation. The entire data-driven modeling (including linear and nonlinear) and analysis of complex-valued brain network dynamics is grounded in multi-modal data, including resting-state and task fMRI, diffusion MRI, and auxiliary benchmarks.
 ## Overview
 This repository contains the custom commercial, open-source, and in-house code used to analyse the data in our study. Most analyses were performed in **MATLAB R2018b**, with additional models and statistics implemented in **Python 3.9.15** and **R 4.2.3**.
 
