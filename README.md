@@ -100,8 +100,8 @@ The following minimal examples demonstrate how to run a basic analysis after pre
 
 ### MATLAB: Linear/Nonlinear Schrödienger-Llike model
 ```matlab
-% Example script1 :
-% data-driven modeling using linear Schrodienger-Llike model: run demo_Linear_Shcrodinger.m
+% Example script1 : run demo_Linear_Shcrodinger.m
+% data-driven modeling using nonlinear Schröienger-like model
 
 % Load rs-fMRI signals (available datasets: HCP-voxel)
 load('TC_HCP_voxel.mat');
@@ -112,8 +112,8 @@ inCfg = struct('field',field, 'T', 101:400, 'TC',TC); % Configuration structure:
 [Q,G,lambda] = calc_coefficients_linear(inCfg);
 ```
 ```matlab
-% Example script2 :
-% data-driven modeling using nonlinear Schröienger-Llike model: run demo_Linear_Shcrodinger.m
+% Example script2 : run demo_Linear_Shcrodinger.m
+% data-driven modeling using nonlinear Schröienger-like model
 
 % Load rs-fMRI signals (available datasets: HCP, HCPex, HCP-voxel, UKB)
 load('TC_HCP_379.mat');
