@@ -105,7 +105,7 @@ The following minimal examples demonstrate how to run a basic analysis after pre
 ```matlab
 % Example : Run demo_Linear_Shcrodinger.m
 % Step 1: Perform data-driven modeling using a linear Schröienger-like model
-% Step 2: analysis of time series prediction results
+% Step 2: Analyze the prediction results
 
 % Load rs-fMRI signals (available datasets: HCP-voxel)
 load('TC_HCP_voxel.mat');
