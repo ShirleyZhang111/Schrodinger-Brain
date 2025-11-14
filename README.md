@@ -153,5 +153,4 @@ If you use this code in your research, please cite the associated manuscript (se
 ## Contact
 
 For questions about the code, bug reports, or suggestions:
-- Please open an issue on the GitHub issue tracker of this repository, or  
-- Contact the corresponding author as listed in the manuscript.
+- Please open an issue on the GitHub issue tracker of this repository, or contact the corresponding author as listed in the manuscript.
