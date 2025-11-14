@@ -1,4 +1,4 @@
-%% Nonlinear Schrodinger model
+% Nonlinear Schrodinger-like model
 % This code implements the Nonlinear comple-valued model for fMRI data analysis
 
 % Load rs-fMRI signals (available datasets: HCP, HCPex, HCP-voxel, UKB)
@@ -138,4 +138,5 @@ Time_com = [coup_strength,time_complex/100];
 Time_com = sortrows(Time_com,1);
 figure;
 semilogx(Time_com(:,1),Time_com(:,2),'LineWidth',1,'Color',[150  59  121]/255);hold on;
+
 xlim([min(coup_strength),max(coup_strength)])
