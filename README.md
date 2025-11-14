@@ -6,9 +6,10 @@ This repository contains the custom commercial, open-source, and in-house code u
 The code is organised to allow:
 
 - preprocessing of neuroimaging time series at the voxel or region-of-interest (ROI) level,
-- estimation of coupling parameters and other network measures using schrodinger-based model, 
-- statistical modelling of age-related and other covariate effects,
-- generation of figures and tables reported in the manuscript.
+- augent brain dynamics to complex-valued field using Hamilton's equations,
+- estimation of coupling parameters and other network measures using schrödinger-based models, 
+- statistical modeling of age-related and other covariate effects,
+- generation of figures and tables reported in the manuscript. 
 
 
 ## System Requirements
