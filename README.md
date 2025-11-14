@@ -96,14 +96,14 @@ The following minimal examples demonstrate how to run a basic analysis after pre
 ### Python: Hamilotin Model
 
 ```python
-# Example: run demo_Hamilton.py
+# Example: Run demo_Hamilton.py
 # Step 1: leare the auxiliary signals and linear coupling operator H from input rs-fMRI signals using Hamilton_Model (HamiltonModel.py).
 # Step 2: The learned auxiliary signals are benchmarked against the discrete Hilbert transform of the input signals.
 ```
 
 ### MATLAB: Linear/Nonlinear Schrödienger-Llike model
 ```matlab
-% Example : run demo_Linear_Shcrodinger.m
+% Example : Run demo_Linear_Shcrodinger.m
 % Step 1: Perform data-driven modeling using a linear Schröienger-like model
 % Step 2: analysis of time series prediction results
 
