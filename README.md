@@ -96,13 +96,16 @@ The following minimal examples demonstrate how to run a basic analysis after pre
 ### Python: Hamilotin Model
 
 ```python
-# Example script: run demo_Hamilton.py
+# Example: run demo_Hamilton.py
+# Step 1: leare the auxiliary signals and linear coupling operator H from input rs-fMRI signals using Hamilton_Model (HamiltonModel.py).
+# Step 2: The learned auxiliary signals are benchmarked against the discrete Hilbert transform of the input signals.
 ```
 
 ### MATLAB: Linear/Nonlinear Schrödienger-Llike model
 ```matlab
-% Example script1 : run demo_Linear_Shcrodinger.m
-% data-driven modeling using nonlinear Schröienger-like model
+% Example : run demo_Linear_Shcrodinger.m
+% Step 1: Perform data-driven modeling using a linear Schröienger-like model
+% Step 2: analysis of time series prediction results
 
 % Load rs-fMRI signals (available datasets: HCP-voxel)
 load('TC_HCP_voxel.mat');
@@ -113,8 +116,11 @@ inCfg = struct('field',field, 'T', 101:400, 'TC',TC); % Configuration structure:
 [Q,G,lambda] = calc_coefficients_linear(inCfg);
 ```
 ```matlab
-% Example script2 : run demo_Linear_Shcrodinger.m
-% data-driven modeling using nonlinear Schröienger-like model
+% Example: Run demo_Nonlinear_Schrodinger.m
+% Step 1: Perform data-driven modeling using a unified nonlinear complex-valued model.
+% Step 2: Validate that the complex-valued model exhibits the structure of the nonlinear Schrödinger equation.
+% Step 3: Conduct data-driven modeling using a nonlinear structural connectivity-informed complex-valued model.
+% Step 4: Analyze stimulus-evoked dynamics under structural connectivity constraints.
 
 % Load rs-fMRI signals (available datasets: HCP, HCPex, HCP-voxel, UKB)
 load('TC_HCP_379.mat');
