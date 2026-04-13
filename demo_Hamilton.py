@@ -18,7 +18,7 @@ dict_mat = loadmat(".\\Data\\TC_HCP_379.mat")
 x = dict_mat["TC"]  # shape: (spatial, time)
 x = stats.zscore(x, axis=1) # z-scored
 x = x[:,100:1000] # use 101~1000 time points (length = 900 TRs)
-
+x = np.matrix.transpose(x) # shape: (time, spatial)
 m = x.shape[1] # Number of spatial regions
 num_samples = x.shape[0] # Number of time points (TRs)
 
