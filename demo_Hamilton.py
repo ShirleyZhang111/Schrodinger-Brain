@@ -59,7 +59,9 @@ model.eval()
 
 
 # Apply discrete Hilbert transform to rs-fMRI signal 'x'
-x = dict_mat["Data"]
+x = dict_mat["TC"]  # shape: (spatial, time)
+x = stats.zscore(x, axis=1) # z-scored
+x = x[:,100:1000] # use 101~1000 time points (length = 900 TRs)
 x_new = np.matrix.transpose(x)
 hilbert_transformed = hilbert(x_new, axis=0)
 hilbert_imag = np.imag(hilbert_transformed)  
