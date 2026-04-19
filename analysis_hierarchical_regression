@@ -1,0 +1,35 @@
+%% Algorithm: Hierarchical Regression for Age Prediction (Regress out the effect of FC)
+
+%% Step 1: Ensure Group is a categorical variable
+idx_D = 1:633;
+idx_YA = 634:1028;
+idx_A = 1029:1321;
+Group = zeros(size(Age));
+Group(idx_D) = 1; Group(idx_YA) = 2; Group(idx_A) = 1;
+Group = categorical(Group);
+
+%% Step 2: Build data table with all covariates
+FC_metric = your_FC_metric.mat
+complex_metric = your_complex_coupling_metric.mat
+data = table(Age, Group, FC_metric, complex_metric);
+
+%% Step 3: Hierarchical regression analysis
+% Model 1: Age predicted by Group + FC
+mdl1 = fitlm(data, 'Age ~ Group + FC_metric');
+R2_1 = mdl1.Rsquared.Ordinary;
+
+% Model 2: Age predicted by Group + FC + complex coupling
+mdl2 = fitlm(data, 'Age ~ Group + FC_metric+ complex_metric');
+R2_2 = mdl2.Rsquared.Ordinary;
+
+delta_R2_complex = R2_2 - R2_1;
+
+%% Step 4: Test significance of ΔR²(Complex)
+n = length(Age);
+k2 = numel(mdl2.Coefficients.Estimate);  % Number of parameters in Model 2 (including intercept)
+k1 = numel(mdl1.Coefficients.Estimate);  % Number of parameters in Model 1 (including intercept)
+F_stat = (delta_R2_complex / (k2 - k1)) / ((1 - R2_2) / (n - k2));
+p_value = 1 - fcdf(F_stat, k2 - k1 n - k2);
+
+fprintf('\nUnique contribution of complex coupling:\n');
+fprintf('  F(%d, %d) = %.2f, p = %.3e\n', k2-k1, n-k2, F_stat, p_value);
