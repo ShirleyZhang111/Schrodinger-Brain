@@ -16,7 +16,7 @@ cfg.TC = TC;
 cfg.maxit = 2000;
 cfg.tol = 1e-12;
 cfg.field = 'complex';
-cfg.T = 101:1100;
+cfg.T = 101:500; % Choose 400 time points
 cfg.mu = 0.1*length(cfg.T);
 
 % Estimate Model Parameters from rs-fMRI data using nonlinear model
