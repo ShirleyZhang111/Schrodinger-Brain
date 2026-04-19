@@ -111,7 +111,7 @@ The following minimal examples demonstrate how to run a basic analysis after pre
 load('TC_HCP_voxel.mat');
 % Set model configuration parameters
 field = 'complex';
-inCfg = struct('field',field, 'T', 101:400, 'TC',TC); % Configuration structure: use time points 101-400 to compute model parameters
+inCfg = struct('field',field, 'T', 101:500, 'TC',TC); % Configuration structure: use time points 101-500 to compute model parameters
 % Calculate parameters for linear Schrodinger-like model
 [Q,G,lambda] = calc_coefficients_linear(inCfg);
 ```
@@ -130,7 +130,7 @@ cfg.is_largescale = 0;
 cfg.maxit = 2000;
 cfg.tol = 1e-12;
 cfg.field = 'complex';
-cfg.T = 101:1100;
+cfg.T = 101:500;
 cfg.mu = 0.1*length(cfg.T);
 % Estimate Model Parameters from rs-fMRI data using nonlinear model
 [coeff, coupling_mat, res, ~, ~, energy,Cor] = calc_coefficients_nonlinear(cfg);
