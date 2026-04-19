@@ -87,9 +87,6 @@ Access is available through the Human Connectome Project platforms; please follo
 ### UK Biobank imaging data
 Neuroimaging data from UK Biobank are available by application via the UK Biobank access management system (project application ID as stated in the manuscript).
 
-### Traffic benchmark data
-Traffic-related time series used as a non-neural benchmark are downloaded from the **UCI Machine Learning Repository**.
-
 ## Quick Demo 
 The following minimal examples demonstrate how to run a basic analysis after preparing your data. Here, we provide data for an individual subject from the HCP, HCPex, and UKB datasets, respectively, and execute the models (Hamilton model, linear/nonlinear Schrodinger model). Note that the actual script names may vary depending on the final repository structure; please adjust paths and filenames accordingly.
 
