@@ -28,13 +28,6 @@ mdl.Coefficients("Age","pValue")
 [~,idx] = sort(Age);
 y_fit = mdl.Coefficients{"Age","Estimate"}*Age;
 
-%% Linear regression: age-related trends of regional coupling indicators after regressing out group effects and FC effects
-metric_FC = your_regional_FC_metric.mat
-metric_complex = your_regional_complex_coupling_metric.mat
-data = table(Age, Group, mean_amp_FC, mean_amp_complex);
-mdl_remove_all = fitlm(data, 'metric_complex ~ Group + metric_FC ');
-adjusted_Indicator = mdl_remove_all.Residuals.Raw;
-
 %% Create visualization plot
 % Scatter plot of age vs adjusted indicator
 figure;
