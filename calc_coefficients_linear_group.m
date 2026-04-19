@@ -59,6 +59,8 @@ elseif strcmp(field, 'real') == 1
         W1 = W1 + A*A'; W2 = W2 + B*A';
     end  
     Q = W2 / W1;
+    [G,D] = eig(Q);
+    lambda = diag(D);
 end
     
 % save([save_path 'Group_rfMRI_resting_Q_G_lambda_' field '.mat'], 'Q','G','lambda');
