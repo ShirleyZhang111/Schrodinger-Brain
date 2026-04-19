@@ -93,7 +93,7 @@ with torch.no_grad():
     plt.show()
 
 
-# Save Learned Parameters (Auxilaray signal y and coupling matrix H)
+# Save Learned Parameters (Auxiliary signal y and coupling matrix H)
 H_learned = H_learned.detach().numpy()
 y_learned = y_learned.detach().numpy()
 np.save('.\\Results\\H_learned.npy', H_learned)
