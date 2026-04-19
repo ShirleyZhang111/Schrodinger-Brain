@@ -1,3 +1,4 @@
+% Linear regression: age-related trends of regional coupling indicators after regressing out group effects
 % Load HCP age data
 load('HCP_individual_age.mat')
 
