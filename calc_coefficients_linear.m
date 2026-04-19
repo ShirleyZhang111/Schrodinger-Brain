@@ -7,7 +7,7 @@ function [Q,G,lambda] = calc_coefficients_linear(inCfg)
 %     T : time points for fitting
 %     field : complex or real field
 % Output:
-%     Q : the unitary matrix satisfies z(t+1) = Q z(t)
+%     Q : the transfer matrix satisfies z(t+1) = Q z(t)
 %     G : the eigenvectors of Q 
 %     lambda : the eigenvalues of Q
 
