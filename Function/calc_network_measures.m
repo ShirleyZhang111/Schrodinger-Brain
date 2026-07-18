@@ -55,7 +55,7 @@ delta = double(delta);
 q = zeros(len,len);
 for i = 1:len
     for j = 1:len
-        q(i,j) = (A(i,j)-d(i)*k(j)/E_dir)*delta(i,j);
+        q(i,j) = (A(i,j)-d(i)*d(j)/E_dir)*delta(i,j);
     end
 end
 Q = sum(sum(q))/E_dir/2;
