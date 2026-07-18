@@ -33,6 +33,7 @@ E_dir = sum(sum(abs(H)));
 density = E_dir/len/(len-1);
 
 % Assortativity
+A = abs(H);
 k = sum(abs(H),2);
 r1 = 0; r2 = 0; r3 = 0; 
 for i = 1:379
