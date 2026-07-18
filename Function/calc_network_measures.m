@@ -34,13 +34,12 @@ density = E_dir/len/(len-1);
 
 % Assortativity
 A = abs(H);
-k = sum(abs(H),2);
 r1 = 0; r2 = 0; r3 = 0; 
 for i = 1:379
     for j = i:379
-        r1 = r1 + k(i)*k(j)*A(i,j);
-        r2 = r2 + 0.5*(k(i)+k(j))*A(i,j);
-        r3 = r3 + 0.5*(k(i)^2+k(j)^2)*A(i,j);
+        r1 = r1 + d(i)*d(j)*A(i,j);
+        r2 = r2 + 0.5*(d(i)+d(j))*A(i,j);
+        r3 = r3 + 0.5*(d(i)^2+d(j)^2)*A(i,j);
     end
 end
 r = (r1/E_dir - (r2/E_dir)^2)/(r3/E_dir- (r2/E_dir)^2);
@@ -56,7 +55,7 @@ delta = double(delta);
 q = zeros(len,len);
 for i = 1:len
     for j = 1:len
-        q(i,j) = (A(i,j)-k(i)*k(j)/E_dir)*delta(i,j);
+        q(i,j) = (A(i,j)-d(i)*k(j)/E_dir)*delta(i,j);
     end
 end
 Q = sum(sum(q))/E_dir/2;
