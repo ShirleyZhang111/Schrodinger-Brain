@@ -129,12 +129,14 @@ vary depending on the final repository structure; please adjust paths and filena
 % Step 2: Analyze the prediction results
 
 % Load rs-fMRI signals (available datasets: HCP-voxel)
-load('TC_HCP_voxel.mat');
+load('./Data/TC_HCP_9982_time1.mat');
+load('./Data/TC_HCP_9982_time2.mat');
+TC = [TC1,TC2];
 % Set model configuration parameters
 field = 'complex';
-inCfg = struct('field',field, 'T', 101:500, 'TC',TC); % Configuration structure: use time points 101-500 to compute model parameters
+inCfg = struct('field',field, 'T', 1:400, 'TC',TC); % Configuration structure: use time points 1-400 to compute model parameters
 % Calculate parameters for linear Schrodinger-like model
-[Q,G,lambda] = calc_coefficients_linear(inCfg);
+Q = calc_coefficients_linear(inCfg);
 ```
 ```matlab
 % Example: Run demo_Nonlinear_Schrodinger.m
