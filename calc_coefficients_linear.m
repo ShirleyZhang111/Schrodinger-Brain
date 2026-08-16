@@ -16,22 +16,26 @@ if isfield(inCfg,'T');T = inCfg.T;else;T = [];end
 if isfield(inCfg,'field');field = inCfg.field;else;field = 'complex';end 
 
 TC = inCfg.TC;
-
 % data z-score
 if strcmp(field, 'complex') == 1
     % Complex-valued data
     hilbert_data = double(hilbert(zscore(TC'))).';
     data = hilbert_data(:,T); clearvars hilbert_data
-    %  Compute model parameters with orthgonality  
+    %  Compute model parameters with orthgonality
     T0 = length(T);
     A = data(:,1:end-1);
     B = data(:,2:end);
     [m,~] = size(A);
-    [U_r,S_r,V_r] = svd([A,B],'econ');
-    V1 = V_r(1:T0-1,:);
-    V2 = V_r(T0:2*T0-2,:);
-    [U0,~,V0] = svd(S_r*V2'*V1*S_r');
-    Q = eye(m)-U_r*(eye(2*T0-2)-U0*V0')*U_r';
+    if m > 2*T0-2
+        [U_r,S_r,V_r] = svd([A,B],'econ');
+        V1 = V_r(1:T0-1,:);
+        V2 = V_r(T0:2*T0-2,:);
+        [U0,~,V0] = svd(S_r*V2'*V1*S_r');
+        Q = eye(m)-U_r*(eye(2*T0-2)-U0*V0')*U_r';
+    else
+        [U,~,V] = svd(B*A');
+        Q = U*V';
+    end
     % [G,D] = eig(Q);
     % lambda = diag(D);
     % save([save_path file_name(4:end-4) '_linear_fitting_' field '.mat'], 'Q','G','lambda');
@@ -39,10 +43,10 @@ elseif strcmp(field, 'real') == 1
     % Real-valued data
     zscore_data = double(zscore(TC')).';
     data = zscore_data(:,T); clearvars zscore_data
-    T0 = length(T);
     A = data(:,1:end-1);
     B = data(:,2:end);
     Q = B/A;
     % [G,D] = eig(Q);
     % lambda = diag(D);
 end
+
