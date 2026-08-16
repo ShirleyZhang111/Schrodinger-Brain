@@ -2,19 +2,21 @@
 % This code implements the linear Schrodinger-like model for fMRI data analysis (prediction for voxel-level data)
 
 % load voxel-level rs-fMRI data
-load('./Data/TC_HCP_9982.mat');
+load('./Data/TC_HCP_9982_time1.mat');
+load('./Data/TC_HCP_9982_time2.mat');
+TC = [TC1,TC2];
 
 % Set model configuration parameters
 field = 'complex';
-inCfg = struct('field',field, 'T', 101:500, 'TC',TC); % Configuration structure: use time points 101-500 to compute model parameters
+inCfg = struct('field',field, 'T', 1:400, 'TC',TC); % Configuration structure: use time points 101-500 to compute model parameters
 
 % Calculate parameters for linear Schrodinger-like model
-[Q,G,lambda] = calc_coefficients_linear(inCfg);
+Q = calc_coefficients_linear(inCfg);
 
 % Time series prediction
-% Prediction length: 10 TRs, Initial state: 501st TR
-cfg = struct('field',field, 'T', 101:1000, 'Q',Q,...
-    'Initial_time', 501-101, 'signal_length',10,'TC',TC); % initial 501, for time points 101-500, initial = 501-101
+% Prediction length: 10 TRs, Initial state: 400st TR
+cfg = struct('field',field, 'T', 1:500, 'Q',Q,...
+    'Initial_time', 400, 'signal_length',10,'TC',TC); % initial 400
 
 % Execute prediction and get results
 [data_predicted,data_obeserved,correlation] = calc_prediction(cfg);
