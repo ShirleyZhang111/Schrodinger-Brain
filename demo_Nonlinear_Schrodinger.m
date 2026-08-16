@@ -2,9 +2,9 @@
 % This code implements the Nonlinear comple-valued model for fMRI data analysis
 
 % Load rs-fMRI signals (available datasets: HCP, HCPex, HCP-voxel, UKB)
-load('TC_HCP_379.mat');
-% load('TC_HCPex_426.mat');
-% load('TC_UKB_426.mat');
+load('./Data/TC_HCP_379.mat');
+% load('./Data/TC_HCPex_426.mat');
+% load('./Data/TC_UKB_426.mat');
 cfg.is_largescale = 0;
 
 % For large-scale voxel-level analysis:
@@ -56,13 +56,13 @@ set(gca,'FontUnits','points','FontName','Arial',"FontSize",7);
 %% SC-informed Nonlinear Model and stimulus-envoked dynamics
 
 % Load structural connectivity matrix
-load('SC_379.mat');
+load('./Data/SC_379.mat');
 % Normalize SC matrix
 d = sum(SC_379,2);
 SC = diag(d.^(-0.5))*SC_379*diag(d.^(-0.5)); 
 
 % Load fMRI data
-load('TC_HCP_379.mat');
+load('./Data/TC_HCP_379.mat');
 
 % Set configuration parameters
 cfg.TC = TC;
