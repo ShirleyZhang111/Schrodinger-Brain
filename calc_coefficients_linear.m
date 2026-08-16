@@ -1,4 +1,4 @@
-function [Q,G,lambda] = calc_coefficients_linear(inCfg)
+function Q = calc_coefficients_linear(inCfg)
 % Individual-level linear model with orthogonal constraint
 %     complex-valued : min_{Q*Q = I} sum_j norm(Qz(:,j) - z(:,j+1))^2
 %     real-valued : min sum_j norm(Qz(:,j) - z(:,j+1))^2
@@ -32,8 +32,8 @@ if strcmp(field, 'complex') == 1
     V2 = V_r(T0:2*T0-2,:);
     [U0,~,V0] = svd(S_r*V2'*V1*S_r');
     Q = eye(m)-U_r*(eye(2*T0-2)-U0*V0')*U_r';
-    [G,D] = eig(Q);
-    lambda = diag(D);
+    % [G,D] = eig(Q);
+    % lambda = diag(D);
     % save([save_path file_name(4:end-4) '_linear_fitting_' field '.mat'], 'Q','G','lambda');
 elseif strcmp(field, 'real') == 1
     % Real-valued data
@@ -43,6 +43,6 @@ elseif strcmp(field, 'real') == 1
     A = data(:,1:end-1);
     B = data(:,2:end);
     Q = B/A;
-    [G,D] = eig(Q);
-    lambda = diag(D);
+    % [G,D] = eig(Q);
+    % lambda = diag(D);
 end
