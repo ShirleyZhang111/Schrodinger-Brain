@@ -124,7 +124,7 @@ vary depending on the final repository structure; please adjust paths and filena
 
 ### MATLAB: Linear/Nonlinear Schrödienger-Llike model
 ```matlab
-% Example : Run demo_Linear_Shcrodinger.m
+% Example : Run demo_Linear_Schrodinger.m
 % Step 1: Perform data-driven modeling using a linear Schröienger-like model
 % Step 2: Analyze the prediction results
 
