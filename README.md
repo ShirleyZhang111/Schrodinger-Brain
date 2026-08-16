@@ -78,17 +78,41 @@ addpath(genpath(pwd));
 savepath;
 ```
 ## Data
-The repository does **not** distribute any raw neuroimaging or third‑party datasets. To reproduce the results, you will need to obtain the data from the original sources and respect their usage policies.
+The repository does **not** distribute the complete raw neuroimaging or third‑party datasets. 
+To reproduce the full results, you will need to obtain the data from the original sources and 
+respect their usage policies.
+
+However, we provide **sample data from individual subjects** at both region and voxel levels to 
+enable users to test and run the pipeline without accessing the full datasets:
+
+**Region-level data:**
+- `TC_HCP_379.mat`: Time courses from one HCP subject with 379 brain regions
+- `TC_HCPex_426.mat`: Time courses from one HCPex subject with 426 brain regions
+- `TS_UKB_426.mat`: Time series from one UKB subject with 426 brain regions
+
+**Voxel-level data:**
+- `TC_HCP_9982_time1.mat`: Voxel-level time courses (timepoints 1-250) from one HCP subject with 9982 voxels
+- `TC_HCP_9982_time2.mat`: Voxel-level time courses (timepoints 251-500) from the same HCP subject with 9982 voxels
+
+Note: The voxel-level data is split into two files due to repository size constraints. In `demo_Linear_Schrodinger.m`, 
+these files are concatenated for analysis. Model predictions are performed using voxel-level data.
+
 ### Human Connectome Project (HCP)
 - Young Adults (HCP-YA) S1200 release  
 - Lifespan Development and Aging (HCP Lifespan)
-Access is available through the Human Connectome Project platforms; please follow the official instructions on the HCP website.
+Access is available through the Human Connectome Project platforms; please follow the official 
+instructions on the HCP website.
 
 ### UK Biobank imaging data
-Neuroimaging data from UK Biobank are available by application via the UK Biobank access management system (project application ID as stated in the manuscript).
+Neuroimaging data from UK Biobank are available by application via the UK Biobank access 
+management system (project application ID as stated in the manuscript).
 
 ## Quick Demo 
-The following minimal examples demonstrate how to run a basic analysis after preparing your data. Here, we provide data for an individual subject from the HCP, HCPex, and UKB datasets, respectively, and execute the models (Hamilton model, linear/nonlinear Schrodinger model). Note that the actual script names may vary depending on the final repository structure; please adjust paths and filenames accordingly.
+The following minimal examples demonstrate how to run a basic analysis using the sample data 
+provided. We include region-level and voxel-level data from individual subjects (one from HCP, 
+one from HCPex, and one from UKB) to test the models (Hamilton model, linear/nonlinear Schrödinger 
+model) without requiring access to the complete datasets. Note that the actual script names may 
+vary depending on the final repository structure; please adjust paths and filenames accordingly.
 
 ### Python: Hamilton Model
 
