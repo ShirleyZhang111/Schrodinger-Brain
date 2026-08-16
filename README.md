@@ -94,7 +94,7 @@ enable users to test and run the pipeline without accessing the full datasets:
 - `TC_HCP_9982_time1.mat`: Voxel-level time courses (timepoints 1-250) from one HCP subject with 9982 voxels
 - `TC_HCP_9982_time2.mat`: Voxel-level time courses (timepoints 251-500) from the same HCP subject with 9982 voxels
 
-Note: The voxel-level data is split into two files due to repository size constraints. In `demo_Linear_Schrodinger.m`, 
+Note: The voxel-level data is split into two files due to repository size constraints. In demo_Linear_Schrodinger.m, 
 these files are concatenated for analysis. Model predictions are performed using voxel-level data.
 
 ### Human Connectome Project (HCP)
