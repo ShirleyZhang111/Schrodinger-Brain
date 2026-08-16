@@ -8,8 +8,8 @@ function Q = calc_coefficients_linear(inCfg)
 %     field : complex or real field
 % Output:
 %     Q : the transfer matrix satisfies z(t+1) = Q z(t)
-%     G : the eigenvectors of Q 
-%     lambda : the eigenvalues of Q
+%     G : the eigenvectors of Q  (optional, can be computed if needed)
+%     lambda : the eigenvalues of Q (optional, can be computed if needed)
 
 % input configuration
 if isfield(inCfg,'T');T = inCfg.T;else;T = [];end 
