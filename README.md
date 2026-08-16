@@ -86,8 +86,8 @@ However, we provide **sample data from individual subjects** at both region and 
 enable users to test and run the pipeline without accessing the full datasets:
 
 **Region-level data:**
-- `TC_HCP_379.mat`: Time courses from one HCP subject with 379 brain regions
-- `TC_HCPex_426.mat`: Time courses from one HCPex subject with 426 brain regions
+- `TC_HCP_379.mat`: Time series from one HCP subject with 379 brain regions
+- `TC_HCPex_426.mat`: Time series from one HCPex subject with 426 brain regions
 - `TS_UKB_426.mat`: Time series from one UKB subject with 426 brain regions
 
 **Voxel-level data:**
