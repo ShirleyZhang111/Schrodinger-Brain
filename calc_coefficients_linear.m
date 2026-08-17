@@ -45,7 +45,13 @@ elseif strcmp(field, 'real') == 1
     data = zscore_data(:,T); clearvars zscore_data
     A = data(:,1:end-1);
     B = data(:,2:end);
+    % linear real-valued model without orthogonal constraint
     Q = B/A;
+
+    % linear real-valued model with orthogonal constraint
+    % [U,S,V] = svd(B*A');
+    % Q = U*V';
+    
     % [G,D] = eig(Q);
     % lambda = diag(D);
 end
