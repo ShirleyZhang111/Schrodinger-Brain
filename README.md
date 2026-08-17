@@ -164,6 +164,10 @@ These demo scripts are intended to:
 - illustrate the expected input data format,
 - produce a set of coupling estimates and figures.
 
+The unified nonlinear model employs the algorithm described in Supplementary Information S10 (Algorithm 3), implemented in `hopf_admm.m`. The reformulated nonlinear model uses the algorithm presented in Supplementary Information S11 (Algorithm 4), implemented in `hopf_admm_imag.m`.
+
+
+
 ## License 
 The software in this repository is released under the **Apache License 2.0**, an Open Source Initiative–approved license that permits commercial and non‑commercial use, modification, and redistribution, subject to the terms of the license.
 
